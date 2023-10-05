@@ -8,7 +8,7 @@ from recog import *
 from hue import *
 from contour import *
 
-test = np.full((500,500,3), 255, dtype= np.uint8)
+test = np.random.randint(0, 255, (256,256,3), dtype = np.uint8)
 
 I0 = time.time()
 # Perform Bayer mosaicing on the image
@@ -43,6 +43,6 @@ fig.add_subplot(1,1,1)
 plt.bar(X_axis, exec_times, label = 'exec times') 
 plt.xticks(X_axis, tickers) 
 plt.xlabel("Method") 
-plt.ylabel("Execution Time") 
+plt.ylabel("Execution Time (s)") 
 plt.title("Time of executions") 
 plt.show()
